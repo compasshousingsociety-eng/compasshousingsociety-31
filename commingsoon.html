@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compass Housing Society | Coming Soon - Exciting Launch</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #100E2C;
+      --light: #F8FAFC;
+      --dark: #000000;
+      --color-flame: #E25822;
+      --color-sage: #4C9A6B;
+      --color-deep-teal: #1E3A5F;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Gantari', system-ui;
+      color: #000000;
+      background-color: #ffffff;
+      transition: all 0.3s ease;
+    }
+    body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("Images/transparent-logo.jpeg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 570px auto;
+        opacity: 0.10;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    /* ========== COMPLETE DARK MODE ========== */
+    body.dark-mode,
+    body.dark-mode .page-wrapper,
+    body.dark-mode .content-layer,
+    body.dark-mode .coming-soon-section,
+    body.dark-mode .site-footer {
+      background-color: #000000 !important;
+    }
+
+    body.dark-mode header {
+      background-color: #000000 !important;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.8) !important;
+    }
+
+    body.dark-mode .nav-menu {
+      background-color: #000000 !important;
+    }
+
+    body.dark-mode .dropdown-menu-custom {
+      background-color: #111111 !important;
+      border-color: rgba(255, 255, 255, 0.2) !important;
+    }
+
+    /* ALL TEXT WHITE IN DARK MODE */
+    body.dark-mode,
+    body.dark-mode h1,
+    body.dark-mode h2,
+    body.dark-mode h3,
+    body.dark-mode p,
+    body.dark-mode li,
+    body.dark-mode span,
+    body.dark-mode a,
+    body.dark-mode .coming-title,
+    body.dark-mode .coming-subtitle,
+    body.dark-mode .coming-description,
+    body.dark-mode .timer-box span,
+    body.dark-mode .timer-label,
+    body.dark-mode .footer-column-title,
+    body.dark-mode .footer-links li a,
+    body.dark-mode .footer-bottom,
+    body.dark-mode .brand span,
+    body.dark-mode .nav-link-custom,
+    body.dark-mode .dropdown-menu-custom li a,
+    body.dark-mode .feature-text,
+    body.dark-mode .notify-text {
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .timer-box {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255,255,255,0.15);
+    }
+
+    body.dark-mode .feature-card {
+      background: #111111 !important;
+      border-color: rgba(255,255,255,0.1);
+    }
+
+    body.dark-mode .btn-sage-filled {
+      background: var(--color-sage);
+      color: white !important;
+    }
+
+    body.dark-mode .btn-sage-outline {
+      border-color: var(--color-sage);
+      color: var(--color-sage);
+    }
+
+    body.dark-mode .btn-sage-outline:hover {
+      background: var(--color-sage);
+      color: white;
+    }
+
+    body.dark-mode .btn-register {
+      background: #333333;
+      color: white !important;
+    }
+
+    body.dark-mode .footer-social-icon {
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+    }
+
+    body.dark-mode .footer-social-icon:hover {
+      background: var(--color-sage);
+    }
+
+    body.dark-mode .mode-toggle {
+      border-color: white;
+      color: white;
+    }
+
+    body.dark-mode .mode-toggle:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    body.dark-mode .notify-form input {
+      background: #1a1a1a;
+      border-color: rgba(255,255,255,0.2);
+      color: white;
+    }
+
+    body.dark-mode .notify-form input::placeholder {
+      color: rgba(255,255,255,0.5);
+    }
+
+    body.dark-mode .btn-home {
+      border-color: white;
+      color: white;
+    }
+
+    body.dark-mode .btn-home:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Light mode styles */
+    h1 { font-size: 52px; line-height: 1.2; font-weight: 800; }
+    h2 { font-size: 38px; font-weight: 800; margin-bottom: 15px; }
+    h3 { font-size: 24px; font-weight: 700; }
+    p { font-size: 18px; line-height: 1.7; margin-bottom: 20px; color: rgba(0,0,0,0.75); }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; padding-left: 0; margin-bottom: 0; }
+
+    .page-wrapper {
+      max-width: 1920px;
+      margin: 0 auto;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+      padding-top: 82px;
+      background-color: #ffffff;
+      transition: background-color 0.3s ease;
+    }
+
+    .content-layer { position: relative; z-index: 1; }
+
+    /* Header Styles - EXACT same as index page */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: var(--primary);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55);
+      transition: background 0.3s ease;
+    }
+
+    .navbar-custom { 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      gap: 24px; 
+      position: relative;
+      padding: 12px 40px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: #ffffff;
+    }
+
+    .brand img { 
+      width: 58px; 
+      height: 58px; 
+      object-fit: cover; 
+      border-radius: 50%; 
+      border: 2px solid #ffffff; 
+      opacity: 0.97; 
+    }
+
+    .brand span {
+      font-size: 18px;
+      line-height: 1.3;
+    }
+
+    .nav-menu { 
+      display: flex; 
+      align-items: center; 
+      gap: 24px; 
+      flex: 1; 
+      justify-content: center; 
+      flex-wrap: wrap; 
+    }
+
+    .nav-item { position: relative; }
+    
+    .nav-link-custom {
+      color: #ffffff;
+      padding: 4px 0;
+      opacity: 0.9;
+      position: relative;
+      cursor: pointer;
+      display: inline-block;
+      transition: color 0.25s ease, opacity 0.25s ease;
+      font-size: 18px !important;
+      font-weight: 500;
+    }
+
+    .nav-link-custom::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0%;
+      height: 2px;
+      background-color: #ffffff;
+      transition: width 0.25s ease;
+    }
+
+    .nav-link-custom:hover::after { width: 100%; }
+    .dropdown-toggle-custom::after { content: " ▾"; position: static; width: auto; height: auto; background: none; margin-left: 4px; }
+
+    .dropdown-menu-custom {
+      position: absolute;
+      left: 0;
+      top: calc(100% + 6px);
+      background-color: #000000;
+      border-radius: 10px;
+      border: 1px solid rgba(248, 250, 252, 0.12);
+      min-width: 190px;
+      display: none;
+      padding: 6px 0;
+      z-index: 120;
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .dropdown-menu-custom li a {
+      display: block;
+      padding: 8px 18px;
+      color: #ffffff;
+      white-space: nowrap;
+      opacity: 0.9;
+      transition: background-color 0.25s ease;
+      font-size: 16px;
+    }
+
+    .dropdown-menu-custom li a:hover { background-color: rgba(76, 154, 107, 0.3); opacity: 1; }
+    .nav-item.dropdown.open>.dropdown-menu-custom { display: block; }
+
+    .nav-actions { 
+      display: flex; 
+      align-items: center; 
+      gap: 12px; 
+      margin-left: auto; 
+    }
+
+    .btn-animated { 
+      transition: transform 0.25s ease, box-shadow 0.25s ease; 
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45); 
+    }
+
+    .btn-animated:hover { 
+      transform: translateY(-2px); 
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.7); 
+    }
+
+    .btn-register {
+      background: #ffffff;
+      color: #000000;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-weight: bold;
+      cursor: pointer;
+      white-space: nowrap;
+      font-family: 'Gantari', system-ui;
+      font-size: 16px;
+    }
+
+    .mode-toggle {
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 999px;
+      padding: 3px 6px;
+      font-size: 16px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      color: #ffffff;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid #ffffff;
+      background: transparent;
+      font-size: 22px;
+      cursor: pointer;
+      color: #ffffff;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .mobile-actions-row { display: none; }
+
+    /* Coming Soon Section */
+    .coming-soon-section {
+      padding: 60px 0 80px;
+      min-height: calc(100vh - 82px - 400px);
+      display: flex;
+      align-items: center;
+    }
+    .coming-content {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .coming-icon {
+      margin-bottom: 30px;
+    }
+    .coming-icon i {
+      font-size: 80px;
+      color: var(--color-flame);
+      background: rgba(226, 88, 34, 0.1);
+      padding: 25px;
+      border-radius: 60px;
+    }
+    .coming-title {
+      font-size: 48px;
+      font-weight: 900;
+      margin-bottom: 15px;
+      color: var(--color-deep-teal);
+    }
+    .coming-subtitle {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--color-flame);
+    }
+    .coming-description {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      color: rgba(0,0,0,0.65);
+    }
+
+    /* Button Group */
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .btn-home {
+      background: transparent;
+      border: 2px solid var(--color-sage);
+      color: var(--color-sage);
+      padding: 12px 32px;
+      border-radius: 60px;
+      font-weight: 700;
+      transition: 0.2s;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .btn-home:hover {
+      background: var(--color-sage);
+      color: white;
+      transform: translateY(-2px);
+    }
+    .btn-sage-filled {
+      background: var(--color-sage);
+      border: none;
+      padding: 12px 32px;
+      border-radius: 60px;
+      font-weight: 700;
+      color: white;
+      transition: 0.2s;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .btn-sage-filled:hover {
+      background: #3a7e55;
+      transform: translateY(-2px);
+    }
+
+    /* Timer */
+    .timer-container {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+    }
+    .timer-box {
+      background: rgba(30, 58, 95, 0.05);
+      border-radius: 20px;
+      padding: 20px 25px;
+      min-width: 100px;
+      text-align: center;
+      border: 1px solid rgba(0,0,0,0.08);
+      transition: all 0.3s;
+    }
+    .timer-box span {
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--color-flame);
+      display: block;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .timer-label {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(0,0,0,0.6);
+    }
+
+    /* Notify Form */
+    .notify-form {
+      max-width: 500px;
+      margin: 0 auto 30px;
+      display: flex;
+      gap: 12px;
+    }
+    .notify-form input {
+      flex: 1;
+      padding: 15px 22px;
+      border: 1px solid rgba(0,0,0,0.15);
+      border-radius: 60px;
+      font-family: 'Gantari', system-ui;
+      background: white;
+      outline: none;
+      transition: 0.2s;
+      font-size: 16px;
+    }
+    .notify-form input:focus {
+      border-color: var(--color-sage);
+      box-shadow: 0 0 0 3px rgba(76, 154, 107, 0.2);
+    }
+
+    /* Features Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+    .feature-card {
+      text-align: center;
+      padding: 25px 20px;
+      background: white;
+      border-radius: 24px;
+      transition: all 0.3s;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    }
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(226, 88, 34, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      font-size: 24px;
+      color: var(--color-flame);
+    }
+    .feature-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .feature-text {
+      font-size: 14px;
+      color: rgba(0,0,0,0.6);
+    }
+    .notify-text {
+      font-size: 14px;
+      color: rgba(0,0,0,0.5);
+      margin-top: 15px;
+    }
+
+    /* Footer - EXACT same as index page (5 columns) */
+    .site-footer {
+      background: var(--primary);
+      color: #ffffff;
+      font-family: 'Gantari', system-ui;
+      width: 100%;
+      padding: 40px 0 20px;
+      margin-top: 0;
+      transition: background 0.3s ease;
+    }
+    .footer-column-title {
+      font-weight: 700;
+      font-size: 20px;
+      margin-bottom: 1.2rem;
+    }
+    .footer-links li {
+      margin-bottom: 10px;
+      font-size: 16px !important;
+    }
+    .footer-links li a {
+      font-size: 16px;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+    .footer-links li a:hover { opacity: 0.8; text-decoration: underline; }
+    .footer-single-image img {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+    .footer-social-icons {
+      display: flex;
+      gap: 14px;
+    }
+    .footer-social-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+      color: white;
+      font-size: 16px;
+    }
+    .footer-social-icon:hover { background: #ffffff; color: var(--primary); transform: translateY(-4px);}
+    .footer-bottom {
+      margin-top: 40px;
+      padding-top: 22px;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      font-size: 14px;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      row-gap: 30px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1030px) {
+      .navbar-custom { padding: 10px 16px; flex-wrap: wrap; }
+      .brand { order: 1; flex:1; }
+      .brand span { font-size: 14px; }
+      .menu-toggle { display: inline-flex; order: 3; }
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -280px;
+        width: 280px;
+        background: #000000;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 80px 20px 30px;
+        transition: 0.3s;
+        z-index: 110;
+        gap: 16px;
+        overflow-y: auto;
+        height: 100vh;
+      }
+      body.dark-mode .nav-menu {
+        background: #000000 !important;
+      }
+      .nav-menu.nav-open { right: 0; }
+      .dropdown-menu-custom { 
+        position: static; 
+        background: rgba(255,255,255,0.08); 
+        border: none; 
+        padding-left: 12px; 
+        display: none;
+        margin-top: 8px;
+        box-shadow: none;
+      }
+      .nav-item.dropdown.open>.dropdown-menu-custom { display: block; }
+      .nav-actions.desktop-actions {
+        display: none !important;
+      }
+      .mobile-actions-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255,255,255,0.2);
+        width: 100%;
+        justify-content: center;
+      }
+      .mobile-actions-row .mode-toggle,
+      .mobile-actions-row .btn-register {
+        flex: 1;
+        text-align: center;
+        justify-content: center;
+        padding: 8px 12px;
+      }
+      .coming-title { font-size: 36px; }
+      .coming-subtitle { font-size: 20px; }
+      .timer-box span { font-size: 36px; }
+      .timer-box { padding: 15px 20px; min-width: 80px; }
+      .timer-container { gap: 15px; }
+      .notify-form { flex-direction: column; }
+      .button-group { gap: 15px; }
+      .nav-link-custom {
+        font-size: 18px !important;
+      }
+    }
+    @media (max-width: 768px) {
+      .page-wrapper { padding-top: 70px; }
+      .coming-soon-section { padding: 40px 0 50px; }
+      .coming-title { font-size: 28px; }
+      .timer-box span { font-size: 28px; }
+      .timer-box { padding: 12px 16px; min-width: 70px; }
+      .features-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+      .footer-grid { text-align: center; justify-content: center; }
+      .btn-home, .btn-sage-filled { padding: 10px 24px; font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+  <div class="content-layer">
+    <!-- Header - EXACT same as index page -->
+    <header>
+      <nav class="navbar-custom">
+        <div class="brand">
+          <img src="Images/logo.jpeg" alt="Compass Housing Society Logo" onerror="this.src='https://placehold.co/58x58/100E2C/white?text=CHS'">
+          <span>Compass Housing <br> Society</span>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link-custom">Home1</a></li>
+          <li class="nav-item"><a href="home2.html" class="nav-link-custom">Home2</a></li>
+          <li class="nav-item dropdown">
+            <span class="nav-link-custom dropdown-toggle-custom">Services</span>
+            <ul class="dropdown-menu-custom"><li><a href="services.html">Service</a></li><li><a href="servicedetails.html">Services Details</a></li></ul>
+          </li>
+          <li class="nav-item dropdown">
+            <span class="nav-link-custom dropdown-toggle-custom">Blog</span>
+            <ul class="dropdown-menu-custom"><li><a href="blog.html">Blog</a></li><li><a href="blogdetails.html">Blog Details</a></li></ul>
+          </li>
+          <li class="nav-item dropdown">
+            <span class="nav-link-custom dropdown-toggle-custom">About Us</span>
+            <ul class="dropdown-menu-custom">
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="additionalpage.html">404</a></li>
+                <li><a href="commingsoon.html">Coming soon</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="contactus.html" class="nav-link-custom">Contact Us</a></li>
+          <!-- Mobile Actions -->
+          <div class="mobile-actions-row">
+            <button class="mode-toggle" type="button" aria-label="Toggle dark mode"><span class="mode-icon">🌙</span></button>
+            <a href="register.html"><button class="btn-register btn-animated" type="button">Register</button></a>
+          </div>
+        </ul>
+        <div class="nav-actions desktop-actions">
+          <button class="mode-toggle" type="button" aria-label="Toggle dark mode"><span class="mode-icon">🌙</span></button>
+          <a href="register.html"><button class="btn-register btn-animated" type="button">Register</button></a>
+        </div>
+        <button class="menu-toggle" type="button" aria-label="Toggle menu">☰</button>
+      </nav>
+    </header>
+
+    <!-- Coming Soon Section -->
+    <section class="coming-soon-section">
+      <div class="container">
+        <div class="coming-content">
+          <div class="coming-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h1 class="coming-title">Something Amazing Is Coming</h1>
+          <h2 class="coming-subtitle">Compass Housing's Next Landmark Project</h2>
+          <p class="coming-description">We're putting the final touches on something extraordinary. A new standard of luxury living that combines innovation, sustainability, and timeless design.</p>
+
+          <!-- Button Group with Return to Home -->
+          <div class="button-group">
+            <a href="index.html" class="btn-sage-filled"><i class="fas fa-envelope me-2"></i> Return to Home</a>
+          </div>
+
+          <!-- Countdown Timer -->
+          <div class="timer-container" id="countdown">
+            <div class="timer-box">
+              <span id="days">00</span>
+              <div class="timer-label">Days</div>
+            </div>
+            <div class="timer-box">
+              <span id="hours">00</span>
+              <div class="timer-label">Hours</div>
+            </div>
+            <div class="timer-box">
+              <span id="minutes">00</span>
+              <div class="timer-label">Minutes</div>
+            </div>
+            <div class="timer-box">
+              <span id="seconds">00</span>
+              <div class="timer-label">Seconds</div>
+            </div>
+          </div>
+
+          <!-- Notify Form -->
+          <form class="notify-form" id="notifyForm">
+            <input type="email" placeholder="Enter your email to get notified first" required>
+            <button type="submit" class="btn-sage-filled">Notify Me <i class="fas fa-bell ms-2"></i></button>
+          </form>
+          <p class="notify-text"><i class="fas fa-envelope me-1"></i> Be the first to know about exclusive launch offers and previews</p>
+
+          <!-- Features Preview -->
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fas fa-building"></i></div>
+              <div class="feature-title">Premium Locations</div>
+              <div class="feature-text">Prime addresses in growing corridors</div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+              <div class="feature-title">Sustainable Design</div>
+              <div class="feature-text">Eco-friendly & green living</div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fas fa-microchip"></i></div>
+              <div class="feature-title">Smart Homes</div>
+              <div class="feature-text">AI-powered intelligent living</div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fas fa-hand-holding-heart"></i></div>
+              <div class="feature-title">Trusted Legacy</div>
+              <div class="feature-text">12+ years of excellence</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer - EXACT same as index page (5 columns with Resources) -->
+    <footer class="site-footer" id="contact">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="row footer-grid row-cols-1 row-cols-sm-2 row-cols-md-5 g-4 align-items-start">
+            <!-- Column 1: Logo & Social -->
+            <div class="col d-flex flex-column align-items-center align-items-md-start">
+              <div class="footer-single-image">
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=400&q=80" alt="Compass Housing Project">
+                <div class="footer-social-icons mt-3">
+                  <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="footer-social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+              </div>
+            </div>
+            <!-- Column 2: Compass Housing -->
+            <div class="col d-flex flex-column align-items-center align-items-md-start">
+              <h4 class="footer-column-title">Compass Housing</h4>
+              <ul class="footer-links"><li><a href="index.html">Start Here</a></li><li><a href="aboutus.html">Our Story</a></li><li><a href="services.html">What We Offer</a></li><li><a href="blog.html">Latest News</a></li><li><a href="contactus.html">Get in Touch</a></li></ul>
+            </div>
+            <!-- Column 3: Quick Links -->
+            <div class="col d-flex flex-column align-items-center align-items-md-start">
+              <h4 class="footer-column-title">Quick Links</h4>
+              <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="aboutus.html">About us</a></li><li><a href="services.html">Services</a></li><li><a href="blog.html">Blog</a></li></ul>
+            </div>
+            <!-- Column 4: Properties -->
+            <div class="col d-flex flex-column align-items-center align-items-md-start">
+              <h4 class="footer-column-title">Properties</h4>
+              <ul class="footer-links"><li><a href="#">Luxury Apartments</a></li><li><a href="#">Gated Communities</a></li><li><a href="#">Commercial Spaces</a></li><li><a href="#">Villas & Bungalows</a></li></ul>
+            </div>
+            <!-- Column 5: Resources -->
+            <div class="col d-flex flex-column align-items-center align-items-md-start">
+              <h4 class="footer-column-title">Resources</h4>
+              <ul class="footer-links">
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Mortgage Calculator</a></li>
+                <li><a href="#">Investment Guide</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-bottom">© Copyright Compass Housing Society 2025. All rights reserved.</div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const body = document.body;
+    const modeToggles = document.querySelectorAll(".mode-toggle");
+    const modeIcons = document.querySelectorAll(".mode-icon");
+    const storedTheme = localStorage.getItem("compass-theme");
+    
+    if (storedTheme === "dark") {
+      body.classList.add("dark-mode");
+      modeIcons.forEach(icon => icon.textContent = "☀️");
+    } else {
+      modeIcons.forEach(icon => icon.textContent = "🌙");
+    }
+    
+    modeToggles.forEach(toggle => {
+      toggle.addEventListener("click", function () {
+        const isDark = body.classList.toggle("dark-mode");
+        modeIcons.forEach(icon => icon.textContent = isDark ? "☀️" : "🌙");
+        localStorage.setItem("compass-theme", isDark ? "dark" : "light");
+      });
+    });
+
+    // Mobile menu
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+    function closeMenu() { if (navMenu) navMenu.classList.remove("nav-open"); }
+    
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        navMenu.classList.toggle("nav-open");
+      });
+      document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 1030 && navMenu.classList.contains('nav-open') && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+          closeMenu();
+        }
+      });
+    }
+    
+    // Dropdowns
+    const dropdownItems = document.querySelectorAll(".nav-item.dropdown > .nav-link-custom");
+    dropdownItems.forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const parent = this.parentElement;
+        document.querySelectorAll(".nav-item.dropdown.open").forEach(item => {
+          if (item !== parent) item.classList.remove("open");
+        });
+        parent.classList.toggle("open");
+      });
+    });
+    
+    const normalLinks = document.querySelectorAll(".nav-item:not(.dropdown) .nav-link-custom");
+    normalLinks.forEach(l => l.addEventListener("click", () => { if (window.innerWidth <= 1030) closeMenu(); }));
+    window.addEventListener("resize", () => { if (window.innerWidth > 1030) closeMenu(); });
+  })();
+
+  // Countdown Timer - Set launch date (45 days from now for demo)
+  function updateCountdown() {
+    const launchDate = new Date();
+    launchDate.setDate(launchDate.getDate() + 45);
+    launchDate.setHours(0, 0, 0, 0);
+    
+    const now = new Date().getTime();
+    const distance = launchDate - now;
+    
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+    document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+    document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+    document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+  }
+  
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // Notify Form Submission
+  document.getElementById('notifyForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = this.querySelector('input[type="email"]').value;
+    if (email) {
+      alert(`Thank you! We'll notify you at ${email} when we launch.`);
+      this.reset();
+    }
+  });
+</script>
+</body>
+</html>

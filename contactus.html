@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compass Housing Society | Contact Us - Get in Touch</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #100E2C;
+      --light: #F8FAFC;
+      --dark: #000000;
+      --color-flame: #E25822;
+      --color-sage: #4C9A6B;
+      --color-deep-teal: #1E3A5F;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Gantari', system-ui;
+      color: #000000;
+      background-color: #ffffff;
+      transition: all 0.3s ease;
+    }
+    body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("Images/transparent-logo.jpeg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 570px auto;
+        opacity: 0.10;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    /* ========== COMPLETE DARK MODE ========== */
+    body.dark-mode,
+    body.dark-mode .page-wrapper,
+    body.dark-mode .content-layer,
+    body.dark-mode .contact-hero-section,
+    body.dark-mode .contact-info-section,
+    body.dark-mode .contact-form-section,
+    body.dark-mode .map-section,
+    body.dark-mode .faq-section,
+    body.dark-mode .site-footer {
+      background-color: #000000 !important;
+    }
+
+    body.dark-mode header {
+      background-color: #000000 !important;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.8) !important;
+    }
+
+    body.dark-mode .nav-menu {
+      background-color: #000000 !important;
+    }
+
+    body.dark-mode .dropdown-menu-custom {
+      background-color: #111111 !important;
+      border-color: rgba(255, 255, 255, 0.2) !important;
+    }
+
+    /* ALL TEXT WHITE IN DARK MODE */
+    body.dark-mode,
+    body.dark-mode h1,
+    body.dark-mode h2,
+    body.dark-mode h3,
+    body.dark-mode h4,
+    body.dark-mode p,
+    body.dark-mode li,
+    body.dark-mode span,
+    body.dark-mode a,
+    body.dark-mode .contact-card-title,
+    body.dark-mode .contact-card-text,
+    body.dark-mode .info-label,
+    body.dark-mode .info-value,
+    body.dark-mode .form-label,
+    body.dark-mode .faq-question,
+    body.dark-mode .faq-answer,
+    body.dark-mode .footer-column-title,
+    body.dark-mode .footer-links li a,
+    body.dark-mode .footer-bottom,
+    body.dark-mode .brand span,
+    body.dark-mode .nav-link-custom,
+    body.dark-mode .dropdown-menu-custom li a,
+    body.dark-mode .section-subtitle,
+    body.dark-mode .contact-hero-title,
+    body.dark-mode .contact-hero-subtitle {
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .contact-info-card {
+      background: #111111 !important;
+      border-color: rgba(255,255,255,0.1);
+    }
+
+    body.dark-mode .contact-form-wrapper {
+      background: #111111 !important;
+      border-color: rgba(255,255,255,0.1);
+    }
+
+    body.dark-mode .form-control,
+    body.dark-mode .form-select {
+      background: #1a1a1a !important;
+      border-color: rgba(255,255,255,0.2) !important;
+      color: white !important;
+    }
+
+    body.dark-mode .form-control::placeholder,
+    body.dark-mode .form-select::placeholder {
+      color: rgba(255,255,255,0.5);
+    }
+
+    body.dark-mode .faq-item {
+      background: #111111 !important;
+      border-color: rgba(255,255,255,0.1);
+    }
+
+    body.dark-mode .btn-sage-filled {
+      background: var(--color-sage);
+      color: white !important;
+    }
+
+    body.dark-mode .btn-register {
+      background: #333333;
+      color: white !important;
+    }
+
+    body.dark-mode .footer-social-icon {
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+    }
+
+    body.dark-mode .footer-social-icon:hover {
+      background: var(--color-sage);
+    }
+
+    body.dark-mode .mode-toggle {
+      border-color: white;
+      color: white;
+    }
+
+    body.dark-mode .mode-toggle:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    body.dark-mode .section-badge {
+      background: rgba(226, 88, 34, 0.2);
+      color: var(--color-flame);
+    }
+
+    body.dark-mode .error-message {
+      color: #ff6b6b !important;
+    }
+
+    /* Light mode styles */
+    h1 { font-size: 52px; line-height: 1.2; font-weight: 800; }
+    h2 { font-size: 38px; font-weight: 800; margin-bottom: 15px; }
+    h3 { font-size: 24px; font-weight: 700; }
+    p { font-size: 18px; line-height: 1.7; margin-bottom: 20px; color: rgba(0,0,0,0.75); }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; padding-left: 0; margin-bottom: 0; }
+
+    .page-wrapper {
+      max-width: 1920px;
+      margin: 0 auto;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+      padding-top: 82px;
+      background-color: #ffffff;
+      transition: background-color 0.3s ease;
+    }
+
+    .content-layer { position: relative; z-index: 1; }
+
+    /* Header Styles - EXACT same as index page */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: var(--primary);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55);
+      transition: background 0.3s ease;
+    }
+
+    .navbar-custom { 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      gap: 24px; 
+      position: relative;
+      padding: 12px 40px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: #ffffff;
+    }
+
+    .brand img { 
+      width: 58px; 
+      height: 58px; 
+      object-fit: cover; 
+      border-radius: 50%; 
+      border: 2px solid #ffffff; 
+      opacity: 0.97; 
+    }
+
+    .brand span {
+      font-size: 18px;
+      line-height: 1.3;
+    }
+
+    .nav-menu { 
+      display: flex; 
+      align-items: center; 
+      gap: 24px; 
+      flex: 1; 
+      justify-content: center; 
+      flex-wrap: wrap; 
+    }
+
+    .nav-item { position: relative; }
+    
+    .nav-link-custom {
+      color: #ffffff;
+      padding: 4px 0;
+      opacity: 0.9;
+      position: relative;
+      cursor: pointer;
+      display: inline-block;
+      transition: color 0.25s ease, opacity 0.25s ease;
+      font-size: 18px !important;
+      font-weight: 500;
+    }
+
+    .nav-link-custom::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0%;
+      height: 2px;
+      background-color: #ffffff;
+      transition: width 0.25s ease;
+    }
+
+    .nav-link-custom:hover::after { width: 100%; }
+    .dropdown-toggle-custom::after { content: " ▾"; position: static; width: auto; height: auto; background: none; margin-left: 4px; }
+
+    .dropdown-menu-custom {
+      position: absolute;
+      left: 0;
+      top: calc(100% + 6px);
+      background-color: #000000;
+      border-radius: 10px;
+      border: 1px solid rgba(248, 250, 252, 0.12);
+      min-width: 190px;
+      display: none;
+      padding: 6px 0;
+      z-index: 120;
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .dropdown-menu-custom li a {
+      display: block;
+      padding: 8px 18px;
+      color: #ffffff;
+      white-space: nowrap;
+      opacity: 0.9;
+      transition: background-color 0.25s ease;
+      font-size: 16px;
+    }
+
+    .dropdown-menu-custom li a:hover { background-color: rgba(76, 154, 107, 0.3); opacity: 1; }
+    .nav-item.dropdown.open>.dropdown-menu-custom { display: block; }
+
+    .nav-actions { 
+      display: flex; 
+      align-items: center; 
+      gap: 12px; 
+      margin-left: auto; 
+    }
+
+    .btn-animated { 
+      transition: transform 0.25s ease, box-shadow 0.25s ease; 
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45); 
+    }
+
+    .btn-animated:hover { 
+      transform: translateY(-2px); 
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.7); 
+    }
+
+    .btn-register {
+      background: #ffffff;
+      color: #000000;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-weight: bold;
+      cursor: pointer;
+      white-space: nowrap;
+      font-family: 'Gantari', system-ui;
+      font-size: 16px;
+    }
+
+    .mode-toggle {
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 999px;
+      padding: 3px 6px;
+      font-size: 16px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      color: #ffffff;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid #ffffff;
+      background: transparent;
+      font-size: 22px;
+      cursor: pointer;
+      color: #ffffff;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .mobile-actions-row { display: none; }
+
+    /* Toast Notification */
+    .toast-notification {
+      position: fixed;
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-30px);
+      background: var(--color-sage);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-size: 16px;
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+      border-left: 4px solid var(--color-flame);
+      font-family: 'Gantari', system-ui;
+    }
+
+    .toast-notification.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    body.dark-mode .toast-notification {
+      background: #1a1a1a;
+    }
+
+    /* Contact Hero Section */
+    .contact-hero-section {
+      padding: 60px 0 40px;
+    }
+    .contact-hero-title {
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+    .contact-hero-subtitle {
+      font-size: 18px;
+      max-width: 650px;
+      margin: 0 auto;
+      color: rgba(0,0,0,0.7);
+    }
+
+    /* Contact Info Cards */
+    .contact-info-section {
+      padding: 40px 0 20px;
+    }
+    .contact-info-card {
+      background: white;
+      border-radius: 24px;
+      padding: 35px 25px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      transition: all 0.3s;
+      height: 100%;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    .contact-info-card:hover {
+      transform: translateY(-8px);
+    }
+    .contact-icon {
+      width: 70px;
+      height: 70px;
+      background: rgba(226, 88, 34, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 28px;
+      color: var(--color-flame);
+    }
+    .contact-card-title {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .contact-card-text {
+      color: rgba(0,0,0,0.65);
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    /* Contact Form Section */
+    .contact-form-section {
+      padding: 60px 0;
+    }
+    .contact-form-wrapper {
+      background: white;
+      border-radius: 28px;
+      padding: 45px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    .form-label {
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .form-control, .form-select {
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 16px;
+      padding: 14px 18px;
+      font-family: 'Gantari', system-ui;
+      transition: all 0.2s;
+      font-size: 15px;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--color-sage);
+      box-shadow: 0 0 0 3px rgba(76, 154, 107, 0.2);
+      outline: none;
+    }
+    .form-control.error, .form-select.error {
+      border-color: #dc3545;
+    }
+    .error-message {
+      color: #dc3545;
+      font-size: 12px;
+      margin-top: 5px;
+      display: none;
+    }
+    .error-message.show {
+      display: block;
+    }
+    .btn-sage-filled {
+      background: var(--color-sage);
+      border: none;
+      padding: 14px 40px;
+      border-radius: 60px;
+      font-weight: 700;
+      color: white;
+      transition: 0.2s;
+      font-size: 16px;
+    }
+    .btn-sage-filled:hover {
+      background: #3a7e55;
+      transform: translateY(-2px);
+    }
+
+    /* Map Section */
+    .map-section {
+      padding: 40px 0 60px;
+    }
+    .map-container {
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 400px;
+      border: 0;
+      display: block;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 60px 0;
+      background: linear-gradient(135deg, rgba(30, 58, 95, 0.03) 0%, rgba(76, 154, 107, 0.03) 100%);
+    }
+    .section-badge {
+      display: inline-block;
+      background: rgba(226, 88, 34, 0.12);
+      color: var(--color-flame);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 18px;
+      border-radius: 40px;
+    }
+    .faq-item {
+      background: white;
+      border-radius: 20px;
+      padding: 25px 30px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    .faq-question {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-question i {
+      transition: transform 0.3s;
+      color: var(--color-flame);
+    }
+    .faq-question.active i {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      display: none;
+      padding-top: 12px;
+      color: rgba(0,0,0,0.65);
+      border-top: 1px solid rgba(0,0,0,0.08);
+      margin-top: 8px;
+      font-size: 15px;
+    }
+    .faq-answer.show {
+      display: block;
+    }
+
+    /* Footer - EXACT same as index page (5 columns) */
+    .site-footer {
+      background: var(--primary);
+      color: #ffffff;
+      font-family: 'Gantari', system-ui;
+      width: 100%;
+      padding: 40px 0 20px;
+      margin-top: 0;
+      transition: background 0.3s ease;
+    }
+    .footer-column-title {
+      font-weight: 700;
+      font-size: 20px;
+      margin-bottom: 1.2rem;
+    }
+    .footer-links li {
+      margin-bottom: 10px;
+      font-size: 16px !important;
+    }
+    .footer-links li a {
+      font-size: 16px;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+    .footer-links li a:hover { opacity: 0.8; text-decoration: underline; }
+    .footer-single-image img {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+    .footer-social-icons {
+      display: flex;
+      gap: 14px;
+    }
+    .footer-social-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+      color: white;
+      font-size: 16px;
+    }
+    .footer-social-icon:hover { background: #ffffff; color: var(--primary); transform: translateY(-4px);}
+    .footer-bottom {
+      margin-top: 40px;
+      padding-top: 22px;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      font-size: 14px;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      row-gap: 30px;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--color-sage);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 99;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    .back-to-top:hover {
+      background-color: var(--color-flame);
+      transform: translateY(-3px);
+    }
+    body.dark-mode .back-to-top {
+      background-color: var(--color-sage);
+    }
+
+    /* Responsive */
+    @media (max-width: 1030px) {
+      .navbar-custom { padding: 10px 16px; flex-wrap: wrap; }
+      .brand { order: 1; flex:1; }
+      .brand span { font-size: 14px; }
+      .menu-toggle { display: inline-flex; order: 3; }
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -280px;
+        width: 280px;
+        background: #000000;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 80px 20px 30px;
+        transition: 0.3s;
+        z-index: 110;
+        gap: 16px;
+        overflow-y: auto;
+        height: 100vh;
+      }
+      body.dark-mode .nav-menu {
+        background: #000000 !important;
+      }
+      .nav-menu.nav-open { right: 0; }
+      .dropdown-menu-custom { 
+        position: static; 
+        background: rgba(255,255,255,0.08); 
+        border: none; 
+        padding-left: 12px; 
+        display: none;
+        margin-top: 8px;
+        box-shadow: none;
+      }
+      .nav-item.dropdown.open>.dropdown-menu-custom { display: block; }
+      .nav-actions.desktop-actions {
+        display: none !important;
+      }
+      .mobile-actions-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255,255,255,0.2);
+        width: 100%;
+        justify-content: center;
+      }
+      .mobile-actions-row .mode-toggle,
+      .mobile-actions-row .btn-register {
+        flex: 1;
+        text-align: center;
+        justify-content: center;
+        padding: 8px 12px;
+      }
+      h1 { font-size: 36px; }
+      h2 { font-size: 30px; }
+      .contact-form-wrapper { padding: 30px 20px; }
+      .map-container iframe { height: 300px; }
+      .nav-link-custom {
+        font-size: 18px !important;
+      }
+      .toast-notification { white-space: normal; width: 90%; text-align: center; }
+    }
+    @media (max-width: 768px) {
+      .page-wrapper { padding-top: 70px; }
+      .contact-info-card { padding: 25px 20px; }
+      .footer-grid { text-align: center; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+  <div class="content-layer">
+    <!-- Header - EXACT same as index page -->
+    <header>
+      <nav class="navbar-custom">
+        <div class="brand">
+          <img src="Images/logo.jpeg" alt="Compass Housing Society Logo" onerror="this.src='https://placehold.co/58x58/100E2C/white?text=CHS'">
+          <span>Compass Housing <br> Society</span>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link-custom">Home1</a></li>
+          <li class="nav-item"><a href="home2.html" class="nav-link-custom">Home2</a></li>
+          <li class="nav-item dropdown">
+            <span class="nav-link-custom dropdown-toggle-custom">Services</span>
+            <ul class="dropdown-menu-custom"><li><a href="services.html">Service</a></li><li><a href="servicedetails.html">Services Details</a></li></ul>
+          </li>
+          <li class="nav-item dropdown">
+            <span class="nav-link-custom dropdown-toggle-custom">Blog</span>
+            <ul class="dropdown-menu-custom"><li><a href="blog.html">Blog</a></li><li><a href="blogdetails.html">Blog Details</a></li></ul>
+          </li>
+          <li class="nav-item dropdown">
+            <span class="nav-link-custom dropdown-toggle-custom">About Us</span>
+            <ul class="dropdown-menu-custom">
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="additionalpage.html">404</a></li>
+                <li><a href="commingsoon.html">Coming soon</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="contactus.html" class="nav-link-custom">Contact Us</a></li>
+          <!-- Mobile Actions -->
+          <div class="mobile-actions-row">
+            <button class="mode-toggle" type="button" aria-label="Toggle dark mode"><span class="mode-icon">🌙</span></button>
+            <a href="register.html"><button class="btn-register btn-animated" type="button">Register</button></a>
+          </div>
+        </ul>
+        <div class="nav-actions desktop-actions">
+          <button class="mode-toggle" type="button" aria-label="Toggle dark mode"><span class="mode-icon">🌙</span></button>
+          <a href="register.html"><button class="btn-register btn-animated" type="button">Register</button></a>
+        </div>
+        <button class="menu-toggle" type="button" aria-label="Toggle menu">☰</button>
+      </nav>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero-section">
+      <div class="container text-center">
+        <h1 class="contact-hero-title">Let's <span style="color: var(--color-flame);">Connect</span></h1>
+        <p class="contact-hero-subtitle">Have questions about our properties, investments, or services? Our team is here to help you every step of the way.</p>
+      </div>
+    </section>
+
+    <!-- Contact Info Cards -->
+    <section class="contact-info-section">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="contact-info-card">
+              <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <h3 class="contact-card-title">Visit Our Office</h3>
+              <p class="contact-card-text">Tower B, 7th Floor, Cyber Heights</p>
+              <p class="contact-card-text">Banjara Hills, Hyderabad - 500034</p>
+              <p class="contact-card-text">Telangana, India</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="contact-info-card">
+              <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+              <h3 class="contact-card-title">Call Us Anytime</h3>
+              <p class="contact-card-text">Sales & Support: +91 98765 43210</p>
+              <p class="contact-card-text">Customer Care: +91 98765 43211</p>
+              <p class="contact-card-text">Mon - Sat: 9:00 AM - 7:00 PM</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="contact-info-card">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <h3 class="contact-card-title">Email Us</h3>
+              <p class="contact-card-text">General Inquiries: hello@compasshousing.com</p>
+              <p class="contact-card-text">Sales: sales@compasshousing.com</p>
+              <p class="contact-card-text">Support: care@compasshousing.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form & Office Hours -->
+    <section class="contact-form-section">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-7">
+            <div class="contact-form-wrapper">
+              <h2 style="margin-bottom: 10px;">Send Us a <span style="color: var(--color-flame);">Message</span></h2>
+              <p style="margin-bottom: 30px;">Fill out the form below and our team will get back to you within 24 hours.</p>
+              <form id="contactForm">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Full Name *</label>
+                    <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                    <div class="error-message" id="nameError">Only letters and spaces allowed. No leading spaces.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Email Address *</label>
+                    <input type="email" id="email" class="form-control" placeholder="yourname@gmail.com" required>
+                    <div class="error-message" id="emailError">Email must end with @gmail.com. No spaces allowed.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Phone Number *</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="Enter 10 digit mobile number" required>
+                    <div class="error-message" id="phoneError">Must be 10 digits starting with 6,7,8, or 9.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Subject *</label>
+                    <select id="subject" class="form-select" required>
+                      <option value="">Select an option</option>
+                      <option value="property-inquiry">Property Inquiry</option>
+                      <option value="investment-consultation">Investment Consultation</option>
+                      <option value="schedule-visit">Schedule a Site Visit</option>
+                      <option value="customer-support">Customer Support</option>
+                      <option value="general-query">General Query</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Message *</label>
+                    <textarea id="message" class="form-control" rows="5" placeholder="Tell us about your requirements..." required></textarea>
+                    <div class="error-message" id="messageError">Message cannot be empty or start with spaces.</div>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn-sage-filled">Send Message <i class="fas fa-arrow-right ms-2"></i></button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="contact-form-wrapper" style="background: var(--color-deep-teal); color: white;">
+              <h3 style="color: white; margin-bottom: 20px;"><i class="far fa-clock"></i> Office Hours</h3>
+              <div style="margin-bottom: 25px;">
+                <p style="display: flex; justify-content: space-between; color: rgba(255,255,255,0.9);"><span>Monday - Friday:</span><span>9:00 AM - 7:00 PM</span></p>
+                <p style="display: flex; justify-content: space-between; color: rgba(255,255,255,0.9);"><span>Saturday:</span><span>10:00 AM - 5:00 PM</span></p>
+                <p style="display: flex; justify-content: space-between; color: rgba(255,255,255,0.9);"><span>Sunday:</span><span>Closed</span></p>
+              </div>
+              <hr style="border-color: rgba(255,255,255,0.2); margin: 25px 0;">
+              <h3 style="color: white; margin-bottom: 15px;"><i class="fas fa-building"></i> Quick Connect</h3>
+              <p style="color: rgba(255,255,255,0.9);"><i class="fab fa-whatsapp me-2"></i> WhatsApp: +91 98765 43212</p>
+              <p style="color: rgba(255,255,255,0.9);"><i class="fas fa-fax me-2"></i> Fax: +91 40 1234 5678</p>
+              <div style="margin-top: 30px;">
+                <a href="#" style="color: white; background: rgba(255,255,255,0.2); padding: 10px 18px; border-radius: 40px; margin-right: 10px; display: inline-block;"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" style="color: white; background: rgba(255,255,255,0.2); padding: 10px 18px; border-radius: 40px; margin-right: 10px; display: inline-block;"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="color: white; background: rgba(255,255,255,0.2); padding: 10px 18px; border-radius: 40px; margin-right: 10px; display: inline-block;"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color: white; background: rgba(255,255,255,0.2); padding: 10px 18px; border-radius: 40px; display: inline-block;"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+      <div class="container">
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.538627304253!2d78.44927957486226!3d17.440143901664187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90c3a6b7b8d5%3A0x2e3f4a5b6c7d8e9f!2sBanjara%20Hills%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-badge">FAQ</span>
+          <h2 style="margin-top: 15px;">Frequently Asked <span style="color: var(--color-flame);">Questions</span></h2>
+          <p style="max-width: 600px; margin: 0 auto;">Find quick answers to common queries about our properties and services.</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="faq-item">
+              <div class="faq-question">What types of properties does Compass Housing offer? <i class="fas fa-chevron-down"></i></div>
+              <div class="faq-answer">We offer a diverse range including luxury apartments, premium villas, gated communities, and commercial office spaces across prime locations in Hyderabad and surrounding areas.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Are all your projects RERA approved? <i class="fas fa-chevron-down"></i></div>
+              <div class="faq-answer">Yes, every Compass Housing project is fully RERA registered with complete transparency in documentation, pricing, and delivery timelines. RERA numbers are displayed on all project pages.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Can I schedule a site visit before booking? <i class="fas fa-chevron-down"></i></div>
+              <div class="faq-answer">Absolutely! We encourage site visits. Please fill out the contact form or call our sales team to book a personalized tour of any of our ongoing projects at your convenience.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">What financing options are available? <i class="fas fa-chevron-down"></i></div>
+              <div class="faq-answer">We have tie-ups with major banks and housing finance companies offering home loans up to 90% of the property value. Our team will assist you throughout the loan process.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Do you provide post-purchase support? <i class="fas fa-chevron-down"></i></div>
+              <div class="faq-answer">Yes, we have a dedicated customer care team that assists with registration, handover, maintenance, and any post-purchase queries for up to 5 years after delivery.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer - EXACT same as index page (5 columns with Resources) -->
+    <footer class="site-footer" id="contact">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="row footer-grid row-cols-1 row-cols-sm-2 row-cols-md-5 g-4 align-items-start">
+            <!-- Column 1: Logo & Social -->
+            <div class="col d-flex flex-column align-items-center align-items-md-start">
+              <div class="footer-single-image">
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=400&q=80" alt="Compass Housing Project">
+                <div class="footer-social-icons mt-3">
+                  <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="footer-social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+              </div>
+            </div>
+            <!-- Column 2: Compass Housing -->
+            <div class="col d-flex flex-column align-items-center align-items-md-start">
+              <h4 class="footer-column-title">Compass Housing</h4>
+              <ul class="footer-links"><li><a href="index.html">Start Here</a></li><li><a href="aboutus.html">Our Story</a></li><li><a href="services.html">What We Offer</a></li><li><a href="blog.html">Latest News</a></li><li><a href="contactus.html">Get in Touch</a></li></ul>
+            </div>
+            <!-- Column 3: Quick Links -->
+            <div class="col d-flex flex-column align-items-center align-items-md-start">
+              <h4 class="footer-column-title">Quick Links</h4>
+              <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="aboutus.html">About us</a></li><li><a href="services.html">Services</a></li><li><a href="blog.html">Blog</a></li></ul>
+            </div>
+            <!-- Column 4: Properties -->
+            <div class="col d-flex flex-column align-items-center align-items-md-start">
+              <h4 class="footer-column-title">Properties</h4>
+              <ul class="footer-links"><li><a href="#">Luxury Apartments</a></li><li><a href="#">Gated Communities</a></li><li><a href="#">Commercial Spaces</a></li><li><a href="#">Villas & Bungalows</a></li></ul>
+            </div>
+            <!-- Column 5: Resources -->
+            <div class="col d-flex flex-column align-items-center align-items-md-start">
+              <h4 class="footer-column-title">Resources</h4>
+              <ul class="footer-links">
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Mortgage Calculator</a></li>
+                <li><a href="#">Investment Guide</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-bottom">© Copyright Compass Housing Society 2025. All rights reserved.</div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<!-- Back to Top Button -->
+<button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+<!-- Toast Notification -->
+<div id="toastNotification" class="toast-notification">
+  <i class="fas fa-bell"></i>
+  <span id="toastMessage">Message</span>
+</div>
+
+<script>
+  (function() {
+    const body = document.body;
+    const modeToggles = document.querySelectorAll(".mode-toggle");
+    const modeIcons = document.querySelectorAll(".mode-icon");
+    const storedTheme = localStorage.getItem("compass-theme");
+    
+    if (storedTheme === "dark") {
+      body.classList.add("dark-mode");
+      modeIcons.forEach(icon => icon.textContent = "☀️");
+    } else {
+      modeIcons.forEach(icon => icon.textContent = "🌙");
+    }
+    
+    modeToggles.forEach(toggle => {
+      toggle.addEventListener("click", function () {
+        const isDark = body.classList.toggle("dark-mode");
+        modeIcons.forEach(icon => icon.textContent = isDark ? "☀️" : "🌙");
+        localStorage.setItem("compass-theme", isDark ? "dark" : "light");
+      });
+    });
+
+    // Toast notification function
+    function showToast(message, isError = false) {
+      const toast = document.getElementById('toastNotification');
+      const toastMessage = document.getElementById('toastMessage');
+      toastMessage.innerText = message;
+      toast.classList.add('show');
+      if (isError) {
+        toast.style.background = "#8B0000";
+        toast.style.borderLeftColor = "#FFA500";
+      } else {
+        toast.style.background = "var(--color-sage)";
+        toast.style.borderLeftColor = "var(--color-flame)";
+      }
+      if (body.classList.contains('dark-mode') && !isError) toast.style.background = "#1a1a1a";
+      if (body.classList.contains('dark-mode') && isError) toast.style.background = "#5a0000";
+      setTimeout(() => { toast.classList.remove('show'); }, 3500);
+    }
+
+    // Mobile menu
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+    function closeMenu() { if (navMenu) navMenu.classList.remove("nav-open"); }
+    
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        navMenu.classList.toggle("nav-open");
+        menuToggle.innerHTML = navMenu.classList.contains("nav-open") ? "✕" : "☰";
+      });
+      document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 1030 && navMenu.classList.contains('nav-open') && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+          closeMenu();
+          menuToggle.innerHTML = "☰";
+        }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && window.innerWidth <= 1030 && navMenu.classList.contains('nav-open')) {
+          closeMenu();
+          menuToggle.innerHTML = "☰";
+        }
+      });
+    }
+    
+    // Dropdowns
+    const dropdownItems = document.querySelectorAll(".nav-item.dropdown > .nav-link-custom");
+    dropdownItems.forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const parent = this.parentElement;
+        document.querySelectorAll(".nav-item.dropdown.open").forEach(item => {
+          if (item !== parent) item.classList.remove("open");
+        });
+        parent.classList.toggle("open");
+      });
+    });
+    
+    const normalLinks = document.querySelectorAll(".nav-item:not(.dropdown) .nav-link-custom");
+    normalLinks.forEach(l => l.addEventListener("click", () => { if (window.innerWidth <= 1030) closeMenu(); menuToggle.innerHTML = "☰"; }));
+    window.addEventListener("resize", () => { if (window.innerWidth > 1030) closeMenu(); menuToggle.innerHTML = "☰"; });
+
+    // Back to Top
+    const backBtn = document.getElementById('backToTop');
+    if (backBtn) {
+      window.addEventListener('scroll', () => { backBtn.classList.toggle('show', window.pageYOffset > 300); });
+      backBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    }
+
+    // FAQ Accordion
+    const faqQuestions = document.querySelectorAll(".faq-question");
+    faqQuestions.forEach(question => {
+      question.addEventListener("click", function() {
+        const answer = this.nextElementSibling;
+        answer.classList.toggle("show");
+        this.classList.toggle("active");
+      });
+    });
+
+    // ========== FORM VALIDATION - SAME AS SAMPLE CODE ==========
+    
+    // Email field - prevent spaces
+    const emailField = document.getElementById('email');
+    if (emailField) {
+      emailField.addEventListener('keydown', function(e) {
+        if (e.key === ' ' || e.key === 'Space') {
+          e.preventDefault();
+          return false;
+        }
+      });
+      emailField.addEventListener('paste', function(e) {
+        e.preventDefault();
+        const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+        const cleanedText = pastedText.replace(/\s/g, '');
+        this.value = cleanedText;
+      });
+      emailField.addEventListener('input', function() {
+        if (this.value.includes(' ')) {
+          this.value = this.value.replace(/\s/g, '');
+        }
+      });
+    }
+    
+    // Name field - trim leading spaces
+    const nameInput = document.getElementById('name');
+    const messageInput = document.getElementById('message');
+    
+    if (nameInput) {
+      nameInput.addEventListener('input', function() {
+        if (this.value.startsWith(' ')) this.value = this.value.trimStart();
+      });
+    }
+    
+    if (messageInput) {
+      messageInput.addEventListener('input', function() {
+        if (this.value.startsWith(' ')) this.value = this.value.trimStart();
+      });
+    }
+    
+    // Validation functions
+    function validateName(name) {
+      if (!name.trim()) return false;
+      if (name.startsWith(' ')) return false;
+      return /^[A-Za-z\s]+$/.test(name);
+    }
+
+    function validateEmail(email) {
+      if (!email) return false;
+      if (email.includes(' ')) return false;
+      const emailLower = email.toLowerCase();
+      return emailLower.endsWith('@gmail.com') && emailLower.indexOf('@') > 0;
+    }
+
+    function validatePhone(phone) {
+      return /^[6-9][0-9]{9}$/.test(phone.trim());
+    }
+
+    function validateMessage(message) {
+      if (!message.trim()) return false;
+      return !message.startsWith(' ');
+    }
+    
+    // Form submission
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        
+        const nameError = document.getElementById('nameError');
+        const emailError = document.getElementById('emailError');
+        const phoneError = document.getElementById('phoneError');
+        const messageError = document.getElementById('messageError');
+        
+        let isValid = true;
+        
+        // Name validation
+        if (!validateName(name)) {
+          nameError.classList.add('show');
+          document.getElementById('name').classList.add('error');
+          isValid = false;
+        } else {
+          nameError.classList.remove('show');
+          document.getElementById('name').classList.remove('error');
+        }
+        
+        // Email validation
+        if (!validateEmail(email)) {
+          emailError.classList.add('show');
+          document.getElementById('email').classList.add('error');
+          isValid = false;
+        } else {
+          emailError.classList.remove('show');
+          document.getElementById('email').classList.remove('error');
+        }
+        
+        // Phone validation
+        if (!validatePhone(phone)) {
+          phoneError.classList.add('show');
+          document.getElementById('phone').classList.add('error');
+          isValid = false;
+        } else {
+          phoneError.classList.remove('show');
+          document.getElementById('phone').classList.remove('error');
+        }
+        
+        // Subject validation
+        if (!subject) {
+          showToast("❌ Please select a subject.", true);
+          isValid = false;
+        }
+        
+        // Message validation
+        if (!validateMessage(message)) {
+          messageError.classList.add('show');
+          document.getElementById('message').classList.add('error');
+          isValid = false;
+        } else {
+          messageError.classList.remove('show');
+          document.getElementById('message').classList.remove('error');
+        }
+        
+        if (isValid) {
+          showToast("✓ Thank you for contacting us! Our team will get back to you within 24 hours.", false);
+          contactForm.reset();
+        } else {
+          showToast("❌ Please fix the highlighted errors before submitting.", true);
+        }
+      });
+    }
+  })();
+</script>
+</body>
+</html>

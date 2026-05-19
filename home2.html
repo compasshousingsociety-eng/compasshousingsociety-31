@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compass Housing Society | Home2 - Perfect Modern Living</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #100E2C;
+      --light: #F8FAFC;
+      --dark: #000000;
+      --color-flame: #E25822;
+      --color-sage: #4C9A6B;
+      --color-deep-teal: #1E3A5F;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Gantari', system-ui;
+      color: #000000;
+      background-color: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    /* Background watermark effect */
+    body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("Images/transparent-logo.jpeg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 570px auto;
+        opacity: 0.10;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    /* ========== COMPLETE DARK MODE - EVERYTHING BLACK + ALL TEXT WHITE ========== */
+    body.dark-mode,
+    body.dark-mode .page-wrapper,
+    body.dark-mode .content-layer,
+    body.dark-mode .hero-home2,
+    body.dark-mode .featured-section,
+    body.dark-mode .why-choose-section,
+    body.dark-mode .testimonial-section,
+    body.dark-mode .site-footer {
+      background-color: #000000 !important;
+    }
+
+    body.dark-mode header {
+      background-color: #000000 !important;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.8) !important;
+    }
+
+    body.dark-mode .nav-menu {
+      background-color: #000000 !important;
+    }
+
+    body.dark-mode .dropdown-menu-custom {
+      background-color: #111111 !important;
+      border-color: rgba(255, 255, 255, 0.2) !important;
+    }
+
+    /* ALL TEXT WHITE IN DARK MODE */
+    body.dark-mode,
+    body.dark-mode h1,
+    body.dark-mode h2,
+    body.dark-mode h3,
+    body.dark-mode h4,
+    body.dark-mode h5,
+    body.dark-mode h6,
+    body.dark-mode p,
+    body.dark-mode li,
+    body.dark-mode span,
+    body.dark-mode a,
+    body.dark-mode .hero2-title,
+    body.dark-mode .hero2-subtitle,
+    body.dark-mode .hero2-stat-label,
+    body.dark-mode .property-title,
+    body.dark-mode .property-location,
+    body.dark-mode .feature-title,
+    body.dark-mode .feature-description,
+    body.dark-mode .testimonial-content,
+    body.dark-mode .footer-column-title,
+    body.dark-mode .footer-links li a,
+    body.dark-mode .footer-bottom,
+    body.dark-mode .section-title p,
+    body.dark-mode .property-card p,
+    body.dark-mode .author-info p,
+    body.dark-mode .brand span,
+    body.dark-mode .nav-link-custom,
+    body.dark-mode .dropdown-menu-custom li a,
+    body.dark-mode .section-title h2,
+    body.dark-mode .hero2-stat-number,
+    body.dark-mode .property-price,
+    body.dark-mode .author-info h4 {
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .testimonial-rating {
+      color: #ffc107 !important;
+    }
+
+    body.dark-mode .btn-sage-filled {
+      background: var(--color-sage);
+      color: white !important;
+    }
+
+    body.dark-mode .btn-register {
+      background: #333333;
+      color: white !important;
+    }
+
+    body.dark-mode .property-card-modern,
+    body.dark-mode .feature-card-xl,
+    body.dark-mode .testimonial-card-modern {
+      background: #111111 !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
+    }
+
+    body.dark-mode .property-amenities {
+      border-top-color: rgba(255, 255, 255, 0.15) !important;
+    }
+
+    body.dark-mode .feature-icon-circle {
+      background: var(--color-sage) !important;
+    }
+
+    body.dark-mode .hero2-stat-card {
+      background: rgba(255, 255, 255, 0.1) !important;
+      border-color: rgba(255, 255, 255, 0.15) !important;
+    }
+
+    body.dark-mode .hero2-badge {
+      background: rgba(226, 88, 34, 0.2);
+      color: #E25822;
+    }
+
+    body.dark-mode .footer-social-icon {
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+    }
+
+    body.dark-mode .footer-social-icon:hover {
+      background: var(--color-sage);
+      color: white;
+    }
+
+    body.dark-mode .mode-toggle {
+      border-color: white;
+      color: white;
+    }
+
+    body.dark-mode .mode-toggle:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    body.dark-mode .dropdown-menu-custom li a:hover {
+      background: rgba(76, 154, 107, 0.3);
+    }
+
+    body.dark-mode .cta-banner-home2 {
+      background: #0a0a0a;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* ========== LIGHT MODE STYLES ========== */
+    h1 { font-size: 46px; line-height: 1.2; }
+    h2 { font-size: 36px; line-height: 1.3; }
+    h3 { font-size: 28px; line-height: 1.3; }
+    h4 { font-size: 22px; line-height: 1.4; }
+    li, span, p { font-size: 18px !important; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; padding-left: 0; margin-bottom: 0; }
+
+    .page-wrapper {
+      max-width: 1920px;
+      margin: 0 auto;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+      padding-top: 82px;
+      background-color: #ffffff;
+      transition: background-color 0.3s ease;
+    }
+
+    .content-layer { position: relative; z-index: 1; }
+
+    /* Header Styles - SAME AS INDEX */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: var(--primary);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55);
+      transition: background 0.3s ease;
+    }
+
+    .navbar-custom { 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      gap: 24px; 
+      position: relative;
+      padding: 12px 40px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .brand img { 
+      width: 58px; 
+      height: 58px; 
+      object-fit: cover; 
+      border-radius: 50%; 
+      border: 2px solid #ffffff; 
+      opacity: 0.97; 
+    }
+
+    .nav-menu { 
+      display: flex; 
+      align-items: center; 
+      gap: 24px; 
+      flex: 1; 
+      justify-content: center; 
+      flex-wrap: wrap; 
+    }
+
+    .nav-item { position: relative; }
+    .nav-link-custom {
+      color: #ffffff;
+      padding: 4px 0;
+      opacity: 0.9;
+      position: relative;
+      cursor: pointer;
+      display: inline-block;
+      transition: color 0.25s ease, opacity 0.25s ease;
+    }
+
+    .nav-link-custom::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0%;
+      height: 2px;
+      background-color: #ffffff;
+      transition: width 0.25s ease;
+    }
+
+    .nav-link-custom:hover::after { width: 100%; }
+    .dropdown-toggle-custom::after { content: " ▾"; position: static; width: auto; height: auto; background: none; margin-left: 4px; }
+
+    .dropdown-menu-custom {
+      position: absolute;
+      left: 0;
+      top: calc(100% + 6px);
+      background-color: #000000;
+      border-radius: 10px;
+      border: 1px solid rgba(248, 250, 252, 0.12);
+      min-width: 190px;
+      display: none;
+      padding: 6px 0;
+      z-index: 120;
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .dropdown-menu-custom li a {
+      display: block;
+      padding: 8px 18px;
+      color: #ffffff;
+      white-space: nowrap;
+      opacity: 0.9;
+      transition: background-color 0.25s ease;
+    }
+
+    .dropdown-menu-custom li a:hover { background-color: rgba(76, 154, 107, 0.3); }
+    .nav-item.dropdown.open>.dropdown-menu-custom { display: block; }
+
+    .nav-actions { 
+      display: flex; 
+      align-items: center; 
+      gap: 12px; 
+      margin-left: auto; 
+    }
+
+    .btn-animated { 
+      transition: transform 0.25s ease, box-shadow 0.25s ease; 
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45); 
+    }
+
+    .btn-animated:hover { 
+      transform: translateY(-2px); 
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.7); 
+    }
+
+    .btn-register {
+      background: #ffffff;
+      color: #000000;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-weight: bold;
+      cursor: pointer;
+      white-space: nowrap;
+      font-family: 'Gantari', system-ui;
+    }
+
+    .btn-sage-filled {
+      background: var(--color-sage);
+      color: white;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 60px;
+      font-weight: 700;
+      transition: 0.2s;
+      display: inline-block;
+    }
+    .btn-sage-filled:hover {
+      background: #3a7e55;
+      transform: scale(1.02);
+      color: white;
+    }
+
+    .mode-toggle {
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 999px;
+      padding: 3px 6px;
+      font-size: 16px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.25s ease;
+      color: #ffffff;
+      background: transparent;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid #ffffff;
+      background: transparent;
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+      color: #ffffff;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-left: 10px;
+    }
+
+    .mobile-actions-row {
+      display: none;
+    }
+
+    /* ==================== HOME2 UNIQUE DESIGN ==================== */
+    .hero-home2 {
+      padding: 40px 0 70px;
+    }
+
+    .hero2-badge {
+      display: inline-block;
+      background: rgba(226, 88, 34, 0.12);
+      color: var(--color-flame);
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero2-title {
+      font-weight: 900;
+      margin-bottom: 24px;
+      color: var(--color-deep-teal);
+      font-size: 52px;
+      line-height: 1.2;
+    }
+
+    .hero2-subtitle {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: rgba(0,0,0,0.7);
+    }
+
+    .hero2-stats-modern {
+      display: flex;
+      gap: 30px;
+      margin: 35px 0 30px;
+      flex-wrap: wrap;
+    }
+
+    .hero2-stat-card {
+      background: rgba(30, 58, 95, 0.05);
+      padding: 18px 24px;
+      border-radius: 28px;
+      text-align: center;
+      min-width: 140px;
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+
+    .hero2-stat-number {
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--color-flame);
+      line-height: 1;
+    }
+
+    .hero2-stat-label {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 8px;
+      color: rgba(0,0,0,0.6);
+    }
+
+    .hero2-image-wrapper {
+      border-radius: 42px;
+      overflow: hidden;
+      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.18);
+    }
+
+    .hero2-image-wrapper img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .hero2-image-wrapper:hover img {
+      transform: scale(1.02);
+    }
+
+    /* Property Grid */
+    .featured-section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+    .section-title h2 {
+      color: var(--color-deep-teal);
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+    .section-title p {
+      color: rgba(0,0,0,0.6);
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .property-card-modern {
+      background: white;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      height: 100%;
+    }
+
+    .property-card-modern:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 30px 45px rgba(0, 0, 0, 0.15);
+    }
+
+    .property-img {
+      position: relative;
+      height: 260px;
+      overflow: hidden;
+    }
+    .property-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .property-card-modern:hover .property-img img {
+      transform: scale(1.07);
+    }
+    .property-tag {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--color-flame);
+      color: white;
+      padding: 4px 14px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .property-price {
+      color: var(--color-flame);
+      font-size: 26px;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+    .property-title {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .property-location {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+      margin-bottom: 12px;
+      color: rgba(0,0,0,0.55);
+    }
+    .property-desc {
+      font-size: 15px;
+      margin-bottom: 18px;
+      color: rgba(0,0,0,0.7);
+    }
+    .property-amenities {
+      display: flex;
+      gap: 16px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      padding-top: 15px;
+      margin-top: 5px;
+    }
+    .amenity {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* Why choose */
+    .why-choose-section {
+      padding: 70px 0;
+      background: linear-gradient(145deg, rgba(30, 58, 95, 0.02) 0%, rgba(76, 154, 107, 0.02) 100%);
+    }
+    .feature-card-xl {
+      background: white;
+      padding: 35px 22px;
+      border-radius: 32px;
+      text-align: center;
+      transition: all 0.3s;
+      height: 100%;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+    }
+    .feature-card-xl:hover {
+      transform: translateY(-6px);
+    }
+    .feature-icon-circle {
+      width: 80px;
+      height: 80px;
+      background: var(--color-flame);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      font-size: 36px;
+      color: white;
+    }
+    .feature-title {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    /* Testimonial */
+    .testimonial-section {
+      padding: 70px 0;
+    }
+    .testimonial-card-modern {
+      background: white;
+      padding: 32px;
+      border-radius: 36px;
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.07);
+      height: 100%;
+      transition: all 0.2s;
+    }
+    .testimonial-card-modern:hover {
+      transform: translateY(-5px);
+    }
+    .quote-icon {
+      font-size: 48px;
+      color: var(--color-flame);
+      opacity: 0.3;
+      margin-bottom: 10px;
+    }
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+    .author-info h4 {
+      font-weight: 800;
+      margin-bottom: 2px;
+      font-size: 18px;
+    }
+    .author-info p {
+      font-size: 14px !important;
+      opacity: 0.7;
+      margin: 0;
+    }
+
+    /* CTA Banner */
+    .cta-banner-home2 {
+      background: var(--color-deep-teal);
+      border-radius: 48px;
+      padding: 55px 40px;
+      margin: 40px 0 20px;
+      text-align: center;
+    }
+    .cta-banner-home2 h3 {
+      color: white;
+      font-weight: 800;
+      font-size: 38px;
+    }
+    .cta-banner-home2 p {
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 28px;
+    }
+    .btn-light-sage {
+      background: var(--color-sage);
+      color: white;
+      border: none;
+      padding: 14px 42px;
+      border-radius: 60px;
+      font-weight: 700;
+      transition: 0.2s;
+      display: inline-block;
+    }
+    .btn-light-sage:hover {
+      background: #3a7e55;
+      transform: scale(1.02);
+      color: white;
+    }
+
+    /* ========== LUXURY SPLIT DESIGN ========== */
+    .alt-layout .luxury-row {
+      margin-bottom: 80px;
+    }
+    .luxury-image {
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    }
+    .luxury-image img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      transition: 0.6s;
+    }
+    .luxury-image:hover img {
+      transform: scale(1.05);
+    }
+    .luxury-content {
+      padding: 20px 10px;
+    }
+    .luxury-tag {
+      display: inline-block;
+      background: #E25822;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+    .luxury-tag.green { background: #4C9A6B; }
+    .luxury-tag.blue { background: #1E3A5F; }
+    .luxury-content h2 {
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+    .location {
+      font-weight: 600;
+      opacity: 0.7;
+      margin-bottom: 10px;
+    }
+    .desc {
+      margin-bottom: 18px;
+      opacity: 0.8;
+    }
+    .luxury-details {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 15px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .price {
+      color: var(--color-flame);
+      font-weight: 900;
+      margin-bottom: 15px;
+    }
+    .reverse {
+      flex-direction: row-reverse;
+    }
+    /* ========== LUXURY WHY SECTION ========== */
+    .luxury-why {
+      padding: 90px 0;
+      background: linear-gradient(135deg, #f8fafc, #eef2f7);
+    }
+    .why-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .why-highlight {
+      background: var(--color-deep-teal);
+      color: white;
+      border-radius: 30px;
+      padding: 50px 30px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    .why-highlight h1 {
+      font-size: 72px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+    .why-highlight p {
+      font-size: 18px;
+      opacity: 0.85;
+    }
+    .why-timeline {
+      position: relative;
+      padding-left: 30px;
+    }
+    .why-timeline::before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--color-sage);
+    }
+    .why-item {
+      position: relative;
+      margin-bottom: 35px;
+    }
+    .why-dot {
+      position: absolute;
+      left: -2px;
+      top: 5px;
+      width: 18px;
+      height: 18px;
+      background: var(--color-flame);
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 0 0 3px rgba(226,88,34,0.2);
+    }
+    .why-content h3 {
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    /* Footer Styles - SAME AS INDEX */
+    .site-footer {
+      background: var(--primary);
+      color: #ffffff;
+      width: 100%;
+      padding: 40px 0 20px;
+      margin-top: 60px;
+      transition: background 0.3s ease;
+    }
+    .footer-column-title {
+      font-weight: 700;
+      font-size: 20px;
+      margin-bottom: 1.2rem;
+    }
+    .footer-links li {
+      margin-bottom: 10px;
+      font-size: 16px !important;
+    }
+    .footer-links li a:hover { opacity: 0.8; text-decoration: underline; }
+    .footer-single-image img {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+    .footer-social-icons {
+      display: flex;
+      gap: 14px;
+    }
+    .footer-social-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+      color: white;
+    }
+    .footer-social-icon:hover { background: #ffffff; color: var(--primary); transform: translateY(-4px);}
+    .footer-bottom {
+      margin-top: 40px;
+      padding-top: 22px;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      row-gap: 30px;
+    }
+    /* Responsive */
+    @media (max-width: 1030px) {
+      .navbar-custom { padding: 10px 16px; flex-wrap: wrap; }
+      .brand { order: 1; flex:1; }
+      .menu-toggle { display: inline-flex; order: 3; }
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -280px;
+        width: 280px;
+        background: #000000;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 80px 20px 30px;
+        transition: 0.3s;
+        z-index: 110;
+        gap: 16px;
+        overflow-y: auto;
+        height: 100vh;
+      }
+      body.dark-mode .nav-menu { background: #000000 !important; }
+      .nav-menu.nav-open { right: 0; }
+      .dropdown-menu-custom { 
+        position: static; 
+        background: rgba(255,255,255,0.08); 
+        border: none; 
+        padding-left: 12px; 
+        display: none;
+        margin-top: 8px;
+        box-shadow: none;
+      }
+      .nav-item.dropdown.open>.dropdown-menu-custom { display: block; }
+      .nav-actions.desktop-actions { display: none !important; }
+      .mobile-actions-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255,255,255,0.2);
+        width: 100%;
+        justify-content: center;
+      }
+      .hero2-title { font-size: 36px; }
+      .hero2-stats-modern { gap: 15px; justify-content: center; }
+      .cta-banner-home2 h3 { font-size: 28px; }
+      .why-wrapper { grid-template-columns: 1fr; }
+      .luxury-image img { height: 260px; }
+      .reverse { flex-direction: column !important; }
+    }
+    @media (max-width: 768px) {
+      .page-wrapper { padding-top: 70px; }
+      .hero2-title { font-size: 30px; }
+      .hero2-stats-modern { flex-direction: column; align-items: stretch; }
+      .hero2-stat-card { text-align: center; }
+      .cta-banner-home2 { padding: 35px 20px; }
+      .footer-grid { text-align: center; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+  <div class="content-layer">
+    <!-- Header - IDENTICAL to index.html -->
+    <header>
+      <nav class="navbar-custom">
+        <div class="brand">
+          <img src="Images/logo.jpeg" alt="Compass Housing Society Logo" onerror="this.src='https://placehold.co/58x58/100E2C/white?text=CHS'">
+          <span>Compass Housing <br> Society</span>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link-custom">Home1</a></li>
+          <li class="nav-item"><a href="home2.html" class="nav-link-custom">Home2</a></li>
+          <li class="nav-item dropdown">
+            <span class="nav-link-custom dropdown-toggle-custom">Services</span>
+            <ul class="dropdown-menu-custom"><li><a href="services.html">Service</a></li><li><a href="servicedetails.html">Services Details</a></li></ul>
+          </li>
+          <li class="nav-item dropdown">
+            <span class="nav-link-custom dropdown-toggle-custom">Blog</span>
+            <ul class="dropdown-menu-custom"><li><a href="blog.html">Blog</a></li><li><a href="blogdetails.html">Blog Details</a></li></ul>
+          </li>
+          <li class="nav-item dropdown">
+            <span class="nav-link-custom dropdown-toggle-custom">About Us</span>
+            <ul class="dropdown-menu-custom">
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="additionalpage.html">404</a></li>
+                <li><a href="commingsoon.html">Comming soon</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="contactus.html" class="nav-link-custom">Contact Us</a></li>
+          <div class="mobile-actions-row">
+            <button class="mode-toggle" type="button" aria-label="Toggle dark mode"><span class="mode-icon">🌙</span></button>
+            <a href="register.html"><button class="btn-register btn-animated" type="button">Register</button></a>
+          </div>
+        </ul>
+        <div class="nav-actions desktop-actions">
+          <button class="mode-toggle" type="button" aria-label="Toggle dark mode"><span class="mode-icon">🌙</span></button>
+          <a href="register.html"><button class="btn-register btn-animated" type="button">Register</button></a>
+        </div>
+        <button class="menu-toggle" type="button" aria-label="Toggle menu">☰</button>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION - Home2 design -->
+    <section class="hero-home2">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 order-lg-2">
+            <div class="hero2-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80" alt="Luxury modern residence">
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <div class="hero2-content">
+              <span class="hero2-badge"><i class="fa-regular fa-compass me-2"></i> Since 2012</span>
+              <h1 class="hero2-title">Elevate Your Lifestyle With Compass</h1>
+              <p class="hero2-subtitle">Discover intelligently designed homes where innovation meets comfort. Experience curated communities built for modern families and forward-thinking investors.</p>
+              <div class="hero2-stats-modern">
+                <div class="hero2-stat-card"><div class="hero2-stat-number">15+</div><div class="hero2-stat-label">Years Legacy</div></div>
+                <div class="hero2-stat-card"><div class="hero2-stat-number">3,870</div><div class="hero2-stat-label">Happy Families</div></div>
+                <div class="hero2-stat-card"><div class="hero2-stat-number">32</div><div class="hero2-stat-label">Live Projects</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROPERTIES SECTION (Enhanced split layout) -->
+    <section id="featured" class="featured-section alt-layout">
+      <div class="container">
+        <div class="section-title text-center mb-5">
+          <h2>Signature Residences</h2>
+          <p>Luxury homes crafted with vision, precision, and elegance.</p>
+        </div>
+        <!-- PROPERTY 1 -->
+        <div class="row align-items-center luxury-row mb-5">
+          <div class="col-lg-6"><div class="luxury-image"><img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1400&q=80" alt="Grandeur"></div></div>
+          <div class="col-lg-6"><div class="luxury-content"><span class="luxury-tag">Best Seller</span><h2>The Grandeur</h2><p class="location">Andheri West, Mumbai</p><p class="desc">Lavish 3 & 4 BHK residences offering breathtaking skyline views, premium clubhouse access, and unmatched urban connectivity.</p><div class="luxury-details"><span>3-4 Beds</span><span>3-4 Baths</span><span>1850–2650 sqft</span></div><h3 class="price">₹1.35Cr*</h3></div></div>
+        </div>
+        <!-- PROPERTY 2 (REVERSED) -->
+        <div class="row align-items-center luxury-row reverse mb-5">
+          <div class="col-lg-6"><div class="luxury-image"><img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1400&q=80" alt="Serene Cove"></div></div>
+          <div class="col-lg-6"><div class="luxury-content"><span class="luxury-tag green">New Launch</span><h2>Serene Cove Villas</h2><p class="location">Powai Lakefront</p><p class="desc">Ultra-premium villas with private pools, landscaped terraces, and serene nature-facing living spaces.</p><div class="luxury-details"><span>4-5 Beds</span><span>4 Baths</span><span>3200–4800 sqft</span></div><h3 class="price">₹2.95Cr*</h3></div></div>
+        </div>
+        <!-- PROPERTY 3 -->
+        <div class="row align-items-center luxury-row">
+          <div class="col-lg-6"><div class="luxury-image"><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1400&q=80" alt="Sky Hub"></div></div>
+          <div class="col-lg-6"><div class="luxury-content"><span class="luxury-tag blue">Commercial</span><h2>Sky Corporate Hub</h2><p class="location">BKC Extension</p><p class="desc">Grade A+ smart office spaces with EV parking, digital access, and LEED-certified sustainable infrastructure.</p><div class="luxury-details"><span>500–10000 sqft</span><span>EV Parking</span><span>Smart Ready</span></div><h3 class="price">₹8900/sqft</h3></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE SECTION (Enhanced) -->
+    <section class="why-choose-section luxury-why">
+      <div class="container">
+        <div class="section-title text-center mb-5"><h2>Why Choose Compass</h2><p>Built on trust, driven by innovation, and designed for excellence.</p></div>
+        <div class="why-wrapper">
+          <div class="why-highlight"><h1>15+</h1><p>Years of Excellence in Real Estate Development</p></div>
+          <div class="why-timeline">
+            <div class="why-item"><div class="why-dot"></div><div class="why-content"><h3>Architectural Excellence</h3><p>Thoughtfully designed spaces blending aesthetics with functionality for modern living.</p></div></div>
+            <div class="why-item"><div class="why-dot"></div><div class="why-content"><h3>High Investment Value</h3><p>Strategically located projects ensuring strong appreciation and rental demand.</p></div></div>
+            <div class="why-item"><div class="why-dot"></div><div class="why-content"><h3>100% Transparency</h3><p>Fully RERA compliant projects with clear documentation and timely delivery.</p></div></div>
+            <div class="why-item"><div class="why-dot"></div><div class="why-content"><h3>Sustainable Living</h3><p>Eco-conscious construction with green spaces, water harvesting, and energy efficiency.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL SECTION -->
+    <section class="testimonial-section">
+      <div class="container">
+        <div class="section-title"><h2>Trusted by Thousands</h2><p>Real voices, real experiences from our compass family.</p></div>
+        <div class="row g-4">
+          <div class="col-lg-4"><div class="testimonial-card-modern"><div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div><div class="testimonial-rating mb-2">★★★★★</div><p class="testimonial-text">"The buying journey was incredibly smooth. The team helped us pick the perfect unit. Our family loves the community vibe."</p><div class="testimonial-author"><div><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" style="width:50px;height:50px;border-radius:50%;object-fit:cover;" alt="Client"></div><div class="author-info ms-3"><h4>Rohan Mehta</h4><p>Investor</p></div></div></div></div>
+          <div class="col-lg-4"><div class="testimonial-card-modern"><div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div><div class="testimonial-rating mb-2">★★★★★</div><p class="testimonial-text">"Compass Housing delivers exceptional quality. From materials to finishing, every detail reflects their passion."</p><div class="testimonial-author"><div><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" style="width:50px;height:50px;border-radius:50%;object-fit:cover;" alt="Client"></div><div class="author-info ms-3"><h4>Neha Singh</h4><p>Homeowner</p></div></div></div></div>
+          <div class="col-lg-4"><div class="testimonial-card-modern"><div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div><div class="testimonial-rating mb-2">★★★★★</div><p class="testimonial-text">"Purchased office space at Sky Hub. The location and amenities are world-class. Truly a game changer."</p><div class="testimonial-author"><div><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" style="width:50px;height:50px;border-radius:50%;object-fit:cover;" alt="Client"></div><div class="author-info ms-3"><h4>Amit Khanna</h4><p>Entrepreneur</p></div></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <div class="container mb-5"><div class="cta-banner-home2"><h3>Ready to Find Your Dream Home?</h3><p>Schedule a private tour or explore our virtual walkthroughs today.</p><a href="contactus.html" class="btn-light-sage">Get in Touch</a></div></div>
+
+    <!-- FOOTER - IDENTICAL to index.html (5 columns as per latest) -->
+    <footer class="site-footer" id="contact">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="row footer-grid row-cols-1 row-cols-sm-2 row-cols-md-5 g-4 align-items-start">
+            <div class="col d-flex flex-column align-items-center align-items-md-start">
+              <div class="footer-single-image"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=400&q=80" alt="Compass Housing Project"></div>
+              <div class="footer-social-icons mt-3"><a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a><a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a><a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a><a href="#" class="footer-social-icon"><i class="fab fa-youtube"></i></a></div>
+            </div>
+            <div class="col d-flex flex-column align-items-center align-items-md-start"><h4 class="footer-column-title">Compass Housing</h4><ul class="footer-links"><li><a href="index.html">Start Here</a></li><li><a href="aboutus.html">Our Story</a></li><li><a href="services.html">What We Offer</a></li><li><a href="blog.html">Latest News</a></li><li><a href="contactus.html">Get in Touch</a></li></ul></div>
+            <div class="col d-flex flex-column align-items-center align-items-md-start"><h4 class="footer-column-title">Quick Links</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="aboutus.html">About us</a></li><li><a href="services.html">Services</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+            <div class="col d-flex flex-column align-items-center align-items-md-start"><h4 class="footer-column-title">Properties</h4><ul class="footer-links"><li><a href="#">Luxury Apartments</a></li><li><a href="#">Gated Communities</a></li><li><a href="#">Commercial Spaces</a></li><li><a href="#">Villas & Bungalows</a></li></ul></div>
+            <div class="col d-flex flex-column align-items-center align-items-md-start"><h4 class="footer-column-title">Resources</h4><ul class="footer-links"><li><a href="#">Help Center</a></li><li><a href="#">FAQs</a></li><li><a href="#">Mortgage Calculator</a></li><li><a href="#">Investment Guide</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+          </div>
+          <div class="footer-bottom">© Copyright Compass Housing Society 2025. All rights reserved.</div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const body = document.body;
+    const modeToggles = document.querySelectorAll(".mode-toggle");
+    const modeIcons = document.querySelectorAll(".mode-icon");
+    const storedTheme = localStorage.getItem("compass-theme");
+    
+    if (storedTheme === "dark") {
+      body.classList.add("dark-mode");
+      modeIcons.forEach(icon => icon.textContent = "☀️");
+    } else {
+      modeIcons.forEach(icon => icon.textContent = "🌙");
+    }
+    
+    modeToggles.forEach(toggle => {
+      toggle.addEventListener("click", function () {
+        const isDark = body.classList.toggle("dark-mode");
+        modeIcons.forEach(icon => icon.textContent = isDark ? "☀️" : "🌙");
+        localStorage.setItem("compass-theme", isDark ? "dark" : "light");
+      });
+    });
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+    function closeMenu() { if (navMenu) navMenu.classList.remove("nav-open"); }
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener("click", (e) => { e.stopPropagation(); navMenu.classList.toggle("nav-open"); });
+      document.addEventListener('click', (e) => { if (window.innerWidth <= 1030 && navMenu.classList.contains('nav-open') && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) closeMenu(); });
+    }
+    
+    const dropdownItems = document.querySelectorAll(".nav-item.dropdown > .nav-link-custom");
+    dropdownItems.forEach(link => {
+      link.addEventListener("click", function (e) { e.preventDefault(); const parent = this.parentElement; document.querySelectorAll(".nav-item.dropdown.open").forEach(item => { if (item !== parent) item.classList.remove("open"); }); parent.classList.toggle("open"); });
+    });
+    const normalLinks = document.querySelectorAll(".nav-item:not(.dropdown) .nav-link-custom");
+    normalLinks.forEach(l => l.addEventListener("click", () => { if (window.innerWidth <= 1030) closeMenu(); }));
+    window.addEventListener("resize", () => { if (window.innerWidth > 1030) closeMenu(); });
+  })();
+</script>
+</body>
+</html>
